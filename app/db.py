@@ -1,8 +1,9 @@
 from pymongo import MongoClient
+import certifi
 
 #client = MongoClient("mongodb://localhost:27017/")
-client = MongoClient("mongodb+srv://luckychaturvedi11101999:UNQIqUmm2UC1zdR9@cluster0.w84rbjz.mongodb.net/")
-
+client = MongoClient("mongodb+srv://luckychaturvedi11101999:UNQIqUmm2UC1zdR9@cluster0.w84rbjz.mongodb.net/", tls=True,
+    tlsCAFile=certifi.where())
 # Check and create database and collection if not exist
 db_name = "ecommerce"
 
